@@ -1,2 +1,2 @@
-# shopping-cart
-A shopping cart project created using Flask and SQLite.
+# Shopping-cart
+A shopping cart project created using Flask, SQLite, HTML, CSS, and JavaScript.
