@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<header>
+    <h1>Turt's Online Shop</h1>
+</header>
+<main>
+    <section class="item">
+        <header class="item-name"><h3>Garlic</h3></header>
+        <div class="item-picture"></div>
+        <footer class="add-to-cart">
+            <form action="/add-to-cart" method="POST">
+                <input type="text" placeholder="Garlic" name="item-name">
+                <input type="text" placeholder="5.00" name="item-price">
+                <input type="submit" value="Add To Cart">
+            </form>
+        </footer>
+    </section>
+    <section class="item">
+        <header class="item-name"><h3>Advocado</h3></header>
+        <div class="item-picture"></div>
+        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+    </section>
+    <section class="item">
+        <header class="item-name"><h3>Mayonnaise</h3></header>
+        <div class="item-picture"></div>
+        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+    </section>
+    <section class="item">
+        <header class="item-name"><h3>Peanuts</h3></header>
+        <div class="item-picture"></div>
+        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+    </section>
+    <section class="item">
+        <header class="item-name"><h3>Oranges</h3></header>
+        <div class="item-picture"></div>
+        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+    </section>
+    <section class="item">
+        <header class="item-name"><h3>Apples</h3></header>
+        <div class="item-picture"></div>
+        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+    </section>
+    <section class="item">
+        <header class="item-name"><h3>Cucumbers</h3></header>
+        <div class="item-picture"></div>
+        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+    </section>
+    <section class="item">
+        <header class="item-name"><h3>Sushi</h3></header>
+        <div class="item-picture"></div>
+        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+    </section>
+</main>
+<footer>
+    <div><a href=checkout><h2>To Checkout</h2></a></div>
+    <div><a href=cart><h2>View Cart</h2></a></div>
+</footer>
+{% endblock %}
+
