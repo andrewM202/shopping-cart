@@ -11,7 +11,7 @@ class shopping_cart(db.Model):
 
     def __init__(self, item, price):
         self.item = item
-        sef.price = price
+        self.price = price
 
     def __repr__(self):
         return f"{self.item}:{self.price}"

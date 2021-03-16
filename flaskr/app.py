@@ -3,18 +3,20 @@ from flask import Flask, render_template, url_for, request, redirect
 from datetime import datetime
 from flask_migrate import Migrate
 from models import db, shopping_cart
- 
+
 app = Flask(__name__)
 # Figure out what this below does: 
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 # I am not entirely sure what track_mods does
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:@localhost:5432/shopping_cart"
+# try using the ['DATABASE_URL'] instead of this: app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:@localhost:5432/shopping_cart"
 
 db.init_app(app)
 # create a Migrate object for migrations
 migrate = Migrate(app, db)
+
+from models import shopping_cart
 
 @app.route('/')
 def index():
