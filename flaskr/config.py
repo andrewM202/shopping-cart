@@ -1,4 +1,4 @@
-# this file is to set up different configurations for all the stages of the workflow - production, staging, development, testing, and default configs
+# DEBUG = False# this file is to set up different configurations for all the stages of the workflow - production, staging, development, testing, and default configs
 import os
 # basedir is set as a relative path from any place we call it to this file
 basedir = os.path.abspath(os.path.dirname(__file__))
