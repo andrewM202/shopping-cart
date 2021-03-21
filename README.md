@@ -19,11 +19,12 @@ NOTE: postgres must be downloaded
     $ python3 -r requirements.txt
 ```
 
-3. Run the following exports: 
+3. Run the following: 
 ```sh
-    $ APP_SETTINGS="config.DevelopmentConfig"
     $ FLASK_APP=flaskr
     $ FLASK_ENV=development
+    $ APP_SETTINGS="config.DevelopmentConfig"
+    $ export DATABASE_URL="postgresql:///shopping_cart"
 ```
 
 4. Create the database by running the following shell script:
