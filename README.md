@@ -23,7 +23,7 @@ NOTE: postgres must be downloaded
 ```sh
     $ FLASK_APP=flaskr
     $ FLASK_ENV=development
-    $ APP_SETTINGS="config.DevelopmentConfig"
+    $ export APP_SETTINGS="config.DevelopmentConfig"
     $ export DATABASE_URL="postgresql:///shopping_cart"
 ```
 
