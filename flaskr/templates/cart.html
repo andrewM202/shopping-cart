@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cart-styles.css') }}">
 {% endblock %}
 
 {% block body %}
 <header>
-Cart.html
-<a href=/>back to index.html</a>
+    <a href=/><h3>Return to home</h3></a>
 </header>
 <main>
-
+    <table>
+        <caption>Items in Cart:</caption>
+        <tbody>
+            <tr>
+                <th>Item</th>
+                {% for item in items %}
+                <td>{{ item[0] }}</td>
+                {% endfor %}
+            <tr>
+                <th>Price</th>
+                {% for price in prices %}
+                <td>{{ price[0] }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>    
+    </table>
 </main>
 <footer>
 

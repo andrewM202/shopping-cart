@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -23,37 +23,79 @@
     <section class="item">
         <header class="item-name"><h3>Avocado</h3></header>
         <div class="item-picture"></div>
-        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+        <footer class="add-to-cart">
+            <form action="/add-to-cart" method="POST">
+                <input type="text" value="Avocado" name="item-name">
+                <input type="text" value="7" name="item-price">
+                <input type="submit" value="Add To Cart">
+            </form>
+        </footer>
     </section>
     <section class="item">
         <header class="item-name"><h3>Mayonnaise</h3></header>
         <div class="item-picture"></div>
-        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+        <footer class="add-to-cart">
+            <form action="/add-to-cart" method="POST">
+                <input type="text" value="Mayonnaise" name="item-name">
+                <input type="text" value="4" name="item-price">
+                <input type="submit" value="Add To Cart">
+            </form>
+        </footer>
     </section>
     <section class="item">
         <header class="item-name"><h3>Peanuts</h3></header>
         <div class="item-picture"></div>
-        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+        <footer class="add-to-cart">
+            <form action="/add-to-cart" method="POST">
+                <input type="text" value="Peanuts" name="item-name">
+                <input type="text" value="15" name="item-price">
+                <input type="submit" value="Add To Cart">
+            </form>
+        </footer>
     </section>
     <section class="item">
-        <header class="item-name"><h3>Oranges</h3></header>
+        <header class="item-name"><h3>Jelly</h3></header>
         <div class="item-picture"></div>
-        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+        <footer class="add-to-cart">
+            <form action="/add-to-cart" method="POST">
+                <input type="text" value="Jelly" name="item-name">
+                <input type="text" value="13" name="item-price">
+                <input type="submit" value="Add To Cart">
+            </form>
+        <footer>
     </section>
     <section class="item">
         <header class="item-name"><h3>Apples</h3></header>
         <div class="item-picture"></div>
-        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+        <footer class="add-to-cart">
+            <form action="/add-to-cart" method="POST">
+                <input type="text" value="Apple" name="item-name">
+                <input type="text" value="2" name="item-price">
+                <input type="submit" value="Add To Cart">
+            </form>
+        </footer>
     </section>
     <section class="item">
         <header class="item-name"><h3>Cucumbers</h3></header>
         <div class="item-picture"></div>
-        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+        <footer class="add-to-cart">
+            <form action="/add-to-cart" method="POST">
+                <input type="text" value="Cucumber" name="item-name">
+                <input type="text" value="9" name="item-price">
+                <input type="submit" value="Add To Cart">
+            </form>
+        </footer>
     </section>
     <section class="item">
         <header class="item-name"><h3>Sushi</h3></header>
         <div class="item-picture"></div>
-        <footer class="add-to-cart"><p>Add To Cart</p></footer>
+        <footer class="add-to-cart">
+            <form action="/add-to-cart" method="POST">
+                <input type="text" value="Sushi" name="item-name">
+                <input type="text" value="12" name="item-price">
+                <input type="submit" value="Add To Cart">
+            </form>
+        </footer>
     </section>
 </main>
 <footer>

@@ -1,9 +1,12 @@
 from models import shopping_cart, db
 import os
 from flask import Flask, render_template, url_for, request, redirect
-from datetime import datetime
 from flask_migrate import Migrate
-from config import DevelopmentConfig
+import psycopg2
+
+# creating the connection to the postgreSQL database
+con = psycopg2.connect(database="shopping_cart", user="andrewmatt", password="", host="localhost")
+cursor = con.cursor()
 
 app = Flask(__name__)
 # Figure out what this below does:
@@ -11,7 +14,6 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 # I am not entirely sure what track_mods does
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:@localhost:5432/shopping_cart"
 
 db.init_app(app)
 # create a Migrate object for migrations
@@ -32,7 +34,7 @@ def form():
         new_item = shopping_cart(item=item, price=price)
         db.session.add(new_item)
         db.session.commit()
-        return "Added it to cart successfully!"
+        return render_template('index.html')
 
 
 @app.route('/checkout')
@@ -40,9 +42,13 @@ def checkout():
     return render_template('checkout.html')
 
 
-@app.route('/cart')
+@app.route('/cart', methods=['POST', 'GET'])
 def cart():
-    return render_template('cart.html')
+    cursor.execute("select item from shop_cart;")
+    items = cursor.fetchall()
+    cursor.execute("select price from shop_cart;")
+    prices = cursor.fetchall()
+    return render_template('cart.html', items=items, prices=prices)
 
 
 if __name__ == "__main__":
