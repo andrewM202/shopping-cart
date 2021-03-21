@@ -25,7 +25,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/add-to-cart', methods=['POST'])
+@app.route('/add-to-cart', methods=['POST', 'GET'])
 def form():
     if request.method == 'POST':
         item = request.form['item-name']
