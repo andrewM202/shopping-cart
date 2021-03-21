@@ -48,8 +48,25 @@ def cart():
     items = cursor.fetchall()
     cursor.execute("SELECT price FROM shop_cart;")
     prices = cursor.fetchall()
-    return render_template('cart.html', items=items, prices=prices)
+    cursor.execute("SELECT id FROM shop_cart;")
+    ids = cursor.fetchall()
 
+    return render_template('cart.html', items=items, prices=prices, ids=ids)
+
+@app.route('/delete/<int:id>', methods=['POST', 'GET'])
+def delete(id):
+    item_to_delete = shopping_cart.query.get_or_404(id)
+    db.session.delete(item_to_delete)
+    db.session.commit()
+
+    cursor.execute("SELECT item FROM shop_cart;")
+    items = cursor.fetchall()
+    cursor.execute("SELECT price FROM shop_cart;")
+    prices = cursor.fetchall()
+    cursor.execute("SELECT id FROM shop_cart;")
+    ids = cursor.fetchall()
+
+    return redirect('/cart')
 
 if __name__ == "__main__":
     app.run(debug=True)

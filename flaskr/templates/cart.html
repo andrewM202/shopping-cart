@@ -23,6 +23,17 @@
                 <td>{{ price[0] }}</td>
                 {% endfor %}
             </tr>
+            <tr>
+                <th>Remove Item From Cart</th>
+                {% for id in ids %}
+                <td>
+                    <form action="/delete/{{ id[0] }} " method="POST">
+                        <input type="text" value={{ id[0] }} name="delete-item">
+                        <input type="submit" value="Delete item">
+                    </form>
+                </td>
+                {% endfor %}
+            </tr>   
         </tbody>    
     </table>
 </main>
