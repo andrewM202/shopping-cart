@@ -1,5 +1,5 @@
 # Shopping-cart
-A shopping cart project created using Flask, SQLite, HTML, CSS, and JavaScript.
+A shopping cart project created using Flask, postgreSQL, SQLAlchemy, HTML, CSS, and JavaScript.
 
 # To run locally:
 NOTE: postgres must be downloaded (brew install postgres, brew services start postgres)
