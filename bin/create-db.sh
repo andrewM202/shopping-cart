@@ -20,4 +20,5 @@ psql postgres -c 'CREATE DATABASE shopping_cart;'
 psql postgres -c 'GRANT ALL PRIVILEGES ON DATABASE "shopping_cart" to shopcart_user;'
 psql postgres -c 'GRANT SELECT ON ALL TABLES IN schema public TO shopcart_user;'
 psql postgres -c 'GRANT CONNECT ON DATABASE shopping_cart TO shopcart_user;'
+psql postgres -c 'GRANT DELETE ON ALL TABLES IN schema public TO shopcart_user;'
 
