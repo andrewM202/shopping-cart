@@ -32,12 +32,17 @@ NOTE: postgres must be downloaded
     $ sh bin/create-db.sh
 ```
 
-5. To create the tables, while inside virtual environment:
+5. Create the tables while inside the virtual environment:
 ```sh
     $ cd flaskr
     $ python manage.py db init
     $ python manage.py db migrate
     $ python manage.py db upgrade
+```
+
+6. Run the application while inside the flaskr directory. Open the live application at http://127.0.0.1:5000/. 
+```sh
+   $ flask run 
 ```
 
 # Screenshots of Website Below
