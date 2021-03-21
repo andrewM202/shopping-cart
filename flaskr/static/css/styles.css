@@ -93,6 +93,10 @@ body > footer div {
     text-align: center;
 }
 
+body > footer div a {
+    text-decoration: none;
+}
+
 input[type="text"] {
     display: none;
 }

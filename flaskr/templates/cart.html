@@ -6,7 +6,7 @@
 
 {% block body %}
 <header>
-    <a href=/><h3>Return to home</h3></a>
+    <div><a href=/><h3>Return to home</h3></a></div>
 </header>
 <main>
     <table>
@@ -24,7 +24,7 @@
                 {% endfor %}
             </tr>
             <tr class="table-remove-row">
-                <th>Remove Item From Cart</th>
+                <th>Remove Item</th>
                 {% for id in ids %}
                 <td>
                     <form action="/delete/{{ id[0] }} " method="POST">
@@ -38,6 +38,6 @@
     </table>
 </main>
 <footer>
-
+    <div><a href=checkout><h2>To Checkout</h2></a></div>
 </footer>
 {% endblock %}
