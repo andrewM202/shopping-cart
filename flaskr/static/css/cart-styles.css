@@ -52,7 +52,7 @@ table {
     width: 80vw;
     min-width: 800px;
     height: 30vh;
-    min-height: 100px;
+    min-height: 500px;
     border: 5px solid black;
     border-collapse: collapse;
 }
@@ -67,14 +67,14 @@ tbody {
 }
 
 tr {
-    width: 100%;
+    width: calc(100% / 3);
 }
 
 th, td {
     width: 100%;
     border: 2px solid black;
     font-size: 1.5em;
-    padding: 15px;
+    padding: 15px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,3 +85,21 @@ body > header > h1 {
     padding: 3vh 10vw;
 }
 
+tr.table-remove-row td {
+    padding: 0;
+}
+
+input[type="text"] {
+   display: none; 
+}
+
+input[type="submit"] {
+    width: calc(80vw / 3 - 8px);
+    min-width: calc(800px / 3 - 8px);
+    overflow: none;
+    height: 58px; 
+    font-size: 1rem;   
+    background: #b8b5ff;
+    border: none;
+    cursor: pointer;
+}
