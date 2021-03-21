@@ -39,3 +39,9 @@ NOTE: postgres must be downloaded
     $ python manage.py db migrate
     $ python manage.py db upgrade
 ```
+
+# Screenshots of Website Below
+<img width="1208" alt="sceen1" src="https://user-images.githubusercontent.com/70407217/111922897-ee121780-8a72-11eb-8ca8-6a038be385e4.png">
+<img width="1203" alt="screen2" src="https://user-images.githubusercontent.com/70407217/111922906-fc603380-8a72-11eb-9ef8-e7607c9636c7.png">
+<img width="1208" alt="screen3" src="https://user-images.githubusercontent.com/70407217/111922911-0124e780-8a73-11eb-87b9-70bcf2c8c4bd.png">
+
