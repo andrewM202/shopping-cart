@@ -20,7 +20,7 @@ db.init_app(app)
 migrate = Migrate(app, db)
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
     return render_template('index.html')
 
@@ -37,7 +37,7 @@ def form():
         return render_template('index.html')
 
 
-@app.route('/checkout')
+@app.route('/checkout', methods=['POST', 'GET'])
 def checkout():
     return render_template('checkout.html')
 
