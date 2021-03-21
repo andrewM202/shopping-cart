@@ -40,7 +40,7 @@ NOTE: postgres must be downloaded
     $ python manage.py db upgrade
 ```
 
-6. Run the application while inside the flaskr directory. Open the live application at http://127.0.0.1:5000/. 
+6. Run the application while inside the flaskr directory. Then open the live application at http://127.0.0.1:5000/
 ```sh
    $ flask run 
 ```
