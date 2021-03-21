@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 import psycopg2
 
 # creating the connection to the postgreSQL database
-con = psycopg2.connect(database="shopping_cart", user="andrewmatt", password="", host="localhost")
+con = psycopg2.connect(database="shopping_cart", user="shopcart_user", password="", host="localhost")
 cursor = con.cursor()
 
 app = Flask(__name__)
