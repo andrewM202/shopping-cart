@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/cart-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart-styles.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -18,4 +18,5 @@
 <footer>
 
 </footer>
+<script src="{{url_for('static', filename='javascript/main.js')}}"></script>
 {% endblock %}
