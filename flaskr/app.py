@@ -44,9 +44,9 @@ def checkout():
 
 @app.route('/cart', methods=['POST', 'GET'])
 def cart():
-    cursor.execute("select item from shop_cart;")
+    cursor.execute("SELECT item FROM shop_cart;")
     items = cursor.fetchall()
-    cursor.execute("select price from shop_cart;")
+    cursor.execute("SELECT price FROM shop_cart;")
     prices = cursor.fetchall()
     return render_template('cart.html', items=items, prices=prices)
 
