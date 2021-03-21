@@ -2,6 +2,7 @@
 A shopping cart project created using Flask, SQLite, HTML, CSS, and JavaScript.
 
 # To run locally:
+NOTE: postgres must be downloaded (brew install postgres)
 1. Create and activate the virtual environment
     - python3 -m venv venv
     - source venv/bin/activate
