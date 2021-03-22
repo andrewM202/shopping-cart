@@ -1,7 +1,7 @@
 # Shopping-cart
-A shopping cart project created using Flask, postgreSQL, SQLAlchemy, HTML, CSS, and JavaScript.
+A shopping cart application created using Flask, postgreSQL, SQLAlchemy, HTML, CSS, and JavaScript. Items can be viewed, added, or deleted from the cart. A page to finalize shopping transactions (currently just uses DOM to change text, no other functionality) is included. 
 
-# To run locally:
+# To Run The Application Locally:
 NOTE: postgres must be downloaded 
 ```sh
     $ brew install postgres 
@@ -19,7 +19,7 @@ NOTE: postgres must be downloaded
     $ python3 -r requirements.txt
 ```
 
-3. Run the following: 
+3. Run the following exports 
 ```sh
     $ FLASK_APP=flaskr
     $ FLASK_ENV=development
@@ -27,12 +27,12 @@ NOTE: postgres must be downloaded
     $ export DATABASE_URL="postgresql:///shopping_cart"
 ```
 
-4. Create the database by running the following shell script:
+4. Create the database by running the following shell script
 ```sh
     $ sh bin/create-db.sh
 ```
 
-5. Create the tables while inside the virtual environment:
+5. Create the tables while inside the virtual environment
 ```sh
     $ cd flaskr
     $ python manage.py db init
