@@ -21,8 +21,5 @@
     "APP_SETTINGS": {
       "value": "config.DevelopmentConfig"
     }
-  },
-  "scripts": {
-    "heroku-prebuild": "cd flaskr"
   }
 }
