@@ -1,5 +1,25 @@
 {
-  "devDependencies": {
-    "prettier": "2.2.1"
+  "name": "Shop cart",
+  "description": "A shopping cart made with flask and postgreSQL",
+  "keywords": ["python", "flask", "postgresql", "heroku"],
+  "addons": [{
+    "plan": "heroku-postgresql",
+    "options": {
+      "version": "12"
+    }
+  }],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "env": {
+    "FLASK_APP": {
+      "value": "flaskr/app.py"
+    },
+    "APP_SETTINGS": {
+      "value": "config.DevelopmentConfig"
+    }
   }
 }

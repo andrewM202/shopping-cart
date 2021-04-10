@@ -59,13 +59,6 @@ def delete(id):
     db.session.delete(item_to_delete)
     db.session.commit()
 
-    cursor.execute("SELECT item FROM shop_cart;")
-    items = cursor.fetchall()
-    cursor.execute("SELECT price FROM shop_cart;")
-    prices = cursor.fetchall()
-    cursor.execute("SELECT id FROM shop_cart;")
-    ids = cursor.fetchall()
-
     return redirect('/cart')
 
 if __name__ == "__main__":
