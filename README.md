@@ -1,4 +1,6 @@
 # Shopping-cart
+This application has been deployed live at https://shopping-cart952.herokuapp.com/
+
 A shopping cart application created using Flask, postgreSQL, SQLAlchemy, HTML, CSS, and JavaScript. Items can be viewed, added, or deleted from the cart. A page to finalize shopping transactions (currently just uses DOM to change text, no other functionality) is included. 
 
 # To Run The Application Locally:
