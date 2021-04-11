@@ -14,8 +14,8 @@ else:
     port = 3000
 
 # creating the connection to the postgreSQL database
-con = psycopg2.connect(database="shopping_cart", user="shopcart_user", password="", host=socket.gethostname(), port=port)
-cursor = con.cursor()
+#con = psycopg2.connect(database="shopping_cart", user="shopcart_user", password="", host="localhost")
+#cursor = con.cursor()
 
 app = Flask(__name__)
 # Figure out what this below does:
@@ -53,12 +53,12 @@ def checkout():
 
 @app.route('/cart', methods=['POST', 'GET'])
 def cart():
-    cursor.execute("SELECT item FROM shop_cart;")
-    items = cursor.fetchall()
-    cursor.execute("SELECT price FROM shop_cart;")
-    prices = cursor.fetchall()
-    cursor.execute("SELECT id FROM shop_cart;")
-    ids = cursor.fetchall()
+    #cursor.execute("SELECT item FROM shop_cart;")
+    #items = cursor.fetchall()
+    #cursor.execute("SELECT price FROM shop_cart;")
+    #prices = cursor.fetchall()
+    #cursor.execute("SELECT id FROM shop_cart;")
+    #ids = cursor.fetchall()
 
     return render_template('cart.html', items=items, prices=prices, ids=ids)
 
