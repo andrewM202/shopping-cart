@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template, url_for, request, redirect
 from flask_migrate import Migrate
 import psycopg2
+from sqlalchemy import create_engine
 
 app = Flask(__name__)
 # Figure out what this below does:
@@ -15,10 +16,7 @@ db.init_app(app)
 # create a Migrate object for migrations
 migrate = Migrate(app, db)
 
-from sqlalchemy import create_engine
 db_string = os.environ.get('DATABASE_URL')
-#db_string = "postgres://lefkbggqqoctza:f3efc8f36726f9fefd8cecd5bfb549e94162c08ca91326a330b065b018ebe6cc@ec2-34-225-103-117.compute-1.amazonaws.com:5432/d5jr1dkvvnk67r"
-#"postgresql://andrewmatt:@localhost/shopping_cart"
 db = create_engine(db_string)
 
 
