@@ -4,8 +4,16 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_migrate import Migrate
 import psycopg2
 
+ON_HEROKU = os.environ.get('ON_HEROKU')
+
+if ON_HEROKU:
+    # get the heroku port
+    port = int(os.environ.get('PORT', 17995))  # as per OP comments default is 17995
+else:
+    port = 3000
+
 # creating the connection to the postgreSQL database
-con = psycopg2.connect(database="shopping_cart", user="shopcart_user", password="", host="0.0.0.0")
+con = psycopg2.connect(database="shopping_cart", user="shopcart_user", password="", host="0.0.0.0", port=port)
 cursor = con.cursor()
 
 app = Flask(__name__)
