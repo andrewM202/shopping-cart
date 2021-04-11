@@ -1,4 +1,4 @@
-from models import shopping_cart, db
+from flaskr.models import shopping_cart, db
 import os
 from flask import Flask, render_template, url_for, request, redirect
 from flask_migrate import Migrate
