@@ -3,7 +3,6 @@ import os
 from flask import Flask, render_template, url_for, request, redirect
 from flask_migrate import Migrate
 import psycopg2
-import socket
 
 ON_HEROKU = os.environ.get('ON_HEROKU')
 
@@ -14,8 +13,6 @@ else:
     port = 3000
 
 # creating the connection to the postgreSQL database
-#con = psycopg2.connect(database="shopping_cart", user="shopcart_user", password="", host="localhost")
-#cursor = con.cursor()
 
 app = Flask(__name__)
 # Figure out what this below does:
@@ -28,6 +25,10 @@ db.init_app(app)
 # create a Migrate object for migrations
 migrate = Migrate(app, db)
 
+from sqlalchemy import create_engine
+db_string = postgres://lefkbggqqoctza:f3efc8f36726f9fefd8cecd5bfb549e94162c08ca91326a330b065b018ebe6cc@ec2-34-225-103-117.compute-1.amazonaws.com:5432/d5jr1dkvvnk67r #"postgresql://andrewmatt:@localhost/shopping_cart"
+db = create_engine(db_string)
+
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -37,12 +38,12 @@ def index():
 @app.route('/add-to-cart', methods=['POST', 'GET'])
 def form():
     if request.method == 'POST':
-        item = request.form['item-name']
-        price = request.form['item-price']
+        itemname = request.form['item-name']
+        itemprice = request.form['item-price']
         
-        new_item = shopping_cart(item=item, price=price)
-        db.session.add(new_item)
-        db.session.commit()
+        db.execute(f"INSERT INTO shop_cart (item, price) VALUES ('{itemname}', '{itemprice}')")
+        #db.session.add(new_item)
+        #db.session.commit()
         return render_template('index.html')
 
 
@@ -53,20 +54,17 @@ def checkout():
 
 @app.route('/cart', methods=['POST', 'GET'])
 def cart():
-    #cursor.execute("SELECT item FROM shop_cart;")
-    #items = cursor.fetchall()
-    #cursor.execute("SELECT price FROM shop_cart;")
-    #prices = cursor.fetchall()
-    #cursor.execute("SELECT id FROM shop_cart;")
-    #ids = cursor.fetchall()
+    items = db.execute("SELECT item FROM shop_cart")
+    prices = db.execute("SELECT price FROM shop_cart")
+    ids = db.execute("SELECT id FROM shop_cart")
 
     return render_template('cart.html', items=items, prices=prices, ids=ids)
 
 @app.route('/delete/<int:id>', methods=['POST', 'GET'])
 def delete(id):
+    print(id)
     item_to_delete = shopping_cart.query.get_or_404(id)
-    db.session.delete(item_to_delete)
-    db.session.commit()
+    db.execute(f"DELETE FROM shop_cart WHERE id='{id}'") 
 
     return redirect('/cart')
 
